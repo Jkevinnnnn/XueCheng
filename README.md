@@ -2,6 +2,24 @@
 
 学成在线微服务项目，包含后端 Spring Cloud 微服务、前端页面、数据库脚本和本地调试脚本。
 
+## 项目展示
+
+### 业务功能框架
+
+![业务功能框架](docs/images/business-framework.png)
+
+### 平台技术架构
+
+![平台技术架构](docs/images/platform-architecture.png)
+
+### 课程发布流程
+
+![课程发布流程](docs/images/course-publish-flow.png)
+
+### 内容管理数据模型
+
+![内容管理数据模型](docs/images/content-data-model.png)
+
 ## 项目结构
 
 - `xuecheng-plus-parent/`：父工程与公共依赖管理。

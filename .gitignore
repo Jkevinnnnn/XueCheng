@@ -33,6 +33,7 @@ dist/
 ._*
 ~$*
 *.tmp
+.tmp-*/
 
 ### VS Code ###
 .vscode/

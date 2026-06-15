@@ -8,7 +8,7 @@ spring:
     name: content-api #服务名content-api-dev.yaml
   cloud:
     nacos:
-      server-addr: 192.168.101.65:8848
+      server-addr: 127.0.0.1:8848
       discovery: #服务注册相关配置
         namespace: dev402
         group: xuecheng-plus-project
@@ -34,6 +34,9 @@ spring:
           - data-id: feign-${spring.profiles.active}.yaml
             group: xuecheng-plus-common
             refresh: true  #profiles默认为dev
+          - data-id: redis-${spring.profiles.active}.yaml
+            group: xuecheng-plus-common
+            refresh: true
 
 
 #  datasource:

@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="/js/vue/vue.min.js"></script>
+    <script src="/js/jwt-decode/jwt-decode.min.js"></script>
+    <script src="/js/base64.min.js"></script>
+    <script src="/js/axios/axios.min.js"></script>
+    <script src="/js/querystring/index.js"></script>
+    <script src="/js/public.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/css/el/index.js"></script>
+
+</head>
+<body >
+<!-- 椤甸潰 css js -->
+<script type="text/javascript" src="/static/plugins/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/static/plugins/bootstrap/dist/js/bootstrap.js"></script>
+<script>
+    $('.vid-act').click(function() {
+        $(this).find('.i-heart').css('background-position', '4px -55px')
+    })
+
+
+    $(function() {
+        //鐐瑰嚮涓嬫媺
+        //鐢ㄦ硶锛欻TML 鐐瑰嚮浜嬩欢涓簃ore,鐖剁骇浣跨敤overflow锛歨idden锛涢檺瀹氶珮 more涓庤灞曞紑鐨勫唴瀹逛负鍚岀骇 瑕佸睍寮€鍐呭娣诲姞 drop-down鐨刢lass
+        function ckMove(target, ckgar, het, text, incr) {
+            var inc = incr ? incr : 0;
+            $(target).find(ckgar).on('click', function() {
+                var h = $(this).parent().find('.drop-down ul').height();
+                if (!$(this).hasClass('act')) {
+                    $(this).addClass('act');
+                    $(this).parent().find('.drop-down').css({
+                        'height': (h + inc) + 'px'
+                    });
+                    $(this).find('i').removeClass('i-chevron-bot').addClass('i-chevron-top')
+                } else {
+                    $(this).removeClass('act');
+                    $(this).parent().find('.drop-down').css({
+                        'height': het + 'px'
+                    });
+                    $(this).find('i').removeClass('i-chevron-top').addClass('i-chevron-bot')
+                }
+            })
+        }
+        //绔犺妭鏀剁缉
+        ckMove('.article-cont .article-left-box', '.title', 0);
+
+        /* $('.learing-box .item-list').mouseover(function(e) {
+         $(this).css({
+         'height': '140px'
+         }).addClass('hov').siblings().css({
+         'height': '50px'
+         })
+         $(this).siblings().removeClass('hov')
+         })
+         $('.learing-box .item-box').mouseout(function() {
+         $(this).find('.item-list:first').css({
+         'height': '140px'
+         }).addClass('hov')
+         $(this).find('.item-list:first').siblings().css({
+         'height': '50px'
+         }).removeClass('hov')
+         })*/
+    })
+
+
+    /*$(function() {
+     $('.learing-box .item-list').mouseover(function(e) {
+     $(this).css({
+     'height': '140px'
+     }).addClass('hov').siblings().css({
+     'height': '50px'
+     })
+     $(this).siblings().removeClass('hov')
+     })
+     $('.learing-box .item-box').mouseout(function() {
+     $(this).find('.item-list:first').css({
+     'height': '140px'
+     }).addClass('hov')
+     $(this).find('.item-list:first').siblings().css({
+     'height': '50px'
+     }).removeClass('hov')
+     })
+     })*/
+
+
+    $(function() {
+        $('.active-box span').click(function() {
+            $(this).css({
+                'color': '#00a4ff'
+            })
+            if ($(this).find('i').hasClass('i-laud')) {
+                $(this).find('.i-laud').css('background-position', '-80px -19px')
+            } else if ($(this).find('i').hasClass('i-coll')) {
+                $(this).find('.i-coll').css('background-position', '1px -75px')
+            }
+        })
+        /*$('.learing-box .item-list').mouseover(function(e) {
+         $(this).css({
+         'height': '140px'
+         }).addClass('hov').siblings().css({
+         'height': '50px'
+         })
+         $(this).siblings().removeClass('hov')
+         })
+         $('.learing-box .item-box').mouseout(function() {
+         $(this).find('.item-list:first').css({
+         'height': '140px'
+         }).addClass('hov')
+         $(this).find('.item-list:first').siblings().css({
+         'height': '50px'
+         }).removeClass('hov')
+         })*/
+    })
+
+
+    $(function() {
+        //璇勫垎
+        $('.star .score').map(function(n, i) {
+            var x = Number($(this).find('i').text());
+            var w = 109 * (1 - x / 5);
+            $(this).css('width', w + 'px');
+        })
+        //璇勮鎵撳垎
+        $('.evaluate .star').mousemove(function(e) {
+            var startX = $(this).offset().left;
+            var movX = e.clientX - startX + 0.5;
+            var w = 145 * (1 - movX / 145);
+            $(this).find('.score').css('width', w + 'px');
+            $('.star-score i').text((movX / 145 * 5).toFixed(1))
+        })
+        //鏄熺骇璇勫垎
+        $('.grade').map(function(n, i) {
+            var pret = $(this).find('.percent-num i').text();
+            var wt = $(this).find('.grade-percent').width();
+            $(this).find('.grade-percent span').css('width', wt * pret / 100);
+        })
+
+
+
+    })
+
+
+    $(function() {
+        //鐐瑰嚮涓嬫媺
+        function ckMove(target, het, text, incr) {
+            var inc = incr ? incr : 0;
+            $(target).find('.on-off').on('click', function() {
+                var h = $(this).parent().find('.drop-down p').height();
+                if (!$(this).hasClass('act')) {
+                    $(this).addClass('act');
+                    $(this).parent().find('.drop-down').css({
+                        'height': (h + inc) + 'px'
+                    });
+                    $(this).find('i').removeClass('i-chevron-bot').addClass('i-chevron-top')
+                } else {
+                    $(this).removeClass('act');
+                    $(this).parent().find('.drop-down').css({
+                        'height': het + 'px'
+                    });
+                    $(this).find('i').removeClass('i-chevron-top').addClass('i-chevron-bot')
+                }
+            })
+        }
+        ckMove('.cktop', 60);
+        ckMove('.cont .item', 0);
+        //鐐瑰嚮鍏抽棴寮圭獥
+        $('.close-popup').click(function() {
+            $('.popup-box').hide();
+        })
+        $('.tit-list a').click(function() {
+            $(this).addClass('active').siblings().removeClass('active');
+            var clasNod = '.' + $(this)[0].id
+            $(clasNod).show().siblings().hide()
+        })
+        // 璧勬枡涓嬭浇
+        $('.down-fill span').click(function() {
+            $('.down-fill ul').css({
+                display: 'block'
+            });
+        })
+        $('.down-fill ul li').click(function() {
+            $('.down-fill ul').css({
+                display: 'none'
+            });
+        })
+    })
+</script>
+<script>
+
+   var body= new Vue({   //鍒涘缓涓€涓猇ue鐨勫疄渚?
+        el: "#body", //鎸傝浇鐐规槸id="app"鐨勫湴鏂?
+
+        data: {
+            title:'娴嬭瘯',
+            courseId:''
+
+
+        },
+        methods: {
+
+
+        },
+       created() {
+
+        },
+        mounted(){
+            alert(courseId)
+        }
+    })
+</script>
+</body>
+</html>

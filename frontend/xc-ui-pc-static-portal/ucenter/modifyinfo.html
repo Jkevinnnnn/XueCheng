@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 涓婅堪3涓猰eta鏍囩*蹇呴』*鏀惧湪鏈€鍓嶉潰锛屼换浣曞叾浠栧唴瀹归兘*蹇呴』*璺熼殢鍏跺悗锛?-->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/img/asset-favicon.ico">
+    <title>鎴戠殑鏀惰棌</title>
+    <link rel="stylesheet" href="/static/plugins/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="/static/plugins/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/css/page-learing-personal-mail.css" />
+</head>
+
+<body>
+<!-- 椤甸潰澶撮儴 -->
+<!--#include virtual="/include/header.html"-->
+    <div class="personal-header" style="background-image: url(/static/img/asset-banner.png);">
+        <!--<div class="personal-info">-->
+        <!--<p><h1>鍚撮洩</h1></p>-->
+        <!--<p>Web鍓嶇宸ョ▼甯?瀛︿範鏃堕暱 48灏忔椂35鍒?/p>-->
+        <!--</div>-->
+        <!--<div class="container">-->
+        <!--<div class="col-lg-2"><img src="/static/img/logoIco.png" alt=""></div>-->
+        <!--<div class="col-lg-4 title text-left">瀛︿範涓績</div>-->
+        <!--<div class="col-lg-6 text-right"><input type="text" class="input-search" placeholder="杈撳叆鏌ヨ鍏抽敭璇?><input type="submit" class="search-buttom"></div>-->
+        <!--</div>-->
+    </div>
+    <!-- 椤甸潰 -->
+    <div class="container">
+        <div class="personal-nav pull-left">
+            <div class="nav nav-stacked text-left">
+                <div class="title">涓汉涓績</div>
+                <div class="my-ico">
+                    <img src="/static/img/asset-myimg.jpg" alt="">
+                    <p>姊﹂啋鏃跺垎</p>
+                </div>
+                <div class="item">
+                  <!--#include virtual="/include/ucenter_menu.html"-->
+                </div>
+            </div>
+        </div>
+        <div class="personal-content pull-right">
+            <div class="set-cant">
+                <div class="top">
+                    <div class="tit"><span><em>褰撳墠浣嶇疆: </em> 鎴戠殑璧勬枡 > 淇敼澶村儚</span></div>
+                </div>
+                <div class="protrait-cont">
+                    <div class="protrait-cont"><img src="/static/img/asset-myimg.jpg" alt=""></div>
+                    <div class="protrait-up">
+                        璇烽€夋嫨涓€涓柊鐓х墖杩涜涓婁紶缂栬緫澶村儚淇濆瓨鍚庯紝浣犲彲浠ラ渶瑕佸埛鏂颁竴涓嬫湰椤甸潰锛堟寜F5閿級锛屾墠鑳芥煡鐪嬫渶鏂扮殑澶村儚鏁堟灉锛堢収鐗囧ぇ灏忎笉鑳借秴杩?M)
+                        <input type="file" name="txt_file" id="txt_file" multiple class="file-loading">
+                        <span class="ck-up">閫夋嫨鐓х墖</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--搴曢儴鐗堟潈-->
+<!--#include virtual="/include/footer.html"-->
+
+    <!-- 椤甸潰 css js -->
+    <script type="text/javascript" src="../plugins/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../plugins/bootstrap/dist/js/bootstrap.js"></script>
+    <script>
+        $(function() {
+            $(window).scroll(function() {
+                console.log($(this)[0].scrollY)
+                if ($(this)[0].scrollY > 235) {
+                    $('.personal-nav').css({
+                        'position': 'fixed',
+                        'top': 10
+                    });
+                } else if ($(this)[0].scrollY <= 155) {
+                    $('.personal-nav').css({
+                        'position': 'relative',
+                        'top': -70
+                    });
+                };
+            })
+        })
+    </script>
+</body>

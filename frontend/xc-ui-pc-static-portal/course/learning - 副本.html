@@ -1,0 +1,1065 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 涓婅堪3涓猰eta鏍囩*蹇呴』*鏀惧湪鏈€鍓嶉潰锛屼换浣曞叾浠栧唴瀹归兘*蹇呴』*璺熼殢鍏跺悗锛?-->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/img/asset-favicon.ico">
+    <title>瀛︽垚鍦ㄧ嚎-鍦ㄧ嚎瀛︿範</title>
+
+    <link rel="stylesheet" href="/static/plugins/rainbow.css" />
+    <link rel="stylesheet" href="/static/plugins/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="/static/plugins/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/page-learing-course-videoes.css" />
+    <link rel="stylesheet" href="/static/css/el/index.css" />
+    <script src="/static/js/vue/vue.min.js"></script>
+    <script src="/static/js/axios/axios.min.js"></script>
+    <script src="/static/js/util.js"></script>
+    <script src="/static/js/public.js"></script>
+    <script src="/static/css/el/index.js"></script>
+    <script src="/static/js/learning.js"></script>
+</head>
+
+<body>
+    <!-- 椤甸潰澶撮儴 -->
+    <div class="learing-course">
+        <div id="learingApp">
+            <div class="course-cont">
+                <div class="course-cont-top-video" style="position: relative;">
+                    <div class="video-box">
+                        <div class="top text-center">
+                            < 涓轰粈涔堝垎涓?A 閮ㄥ垎銆丅 閮ㄥ垎銆丆 閮ㄥ垎>
+                                <!--<i class="glyphicon glyphicon-book pull-right"></i>-->
+                                <!--<div class="resources">-->
+                                <!--<div class="resou-box">-->
+                                <!--<div class="resources-tit"><i class="glyphicon glyphicon-folder-close"></i>璇剧▼璧勬簮</div>-->
+                                <!--<div class="tit">璇剧▼鏉愭枡</div>-->
+                                <!--<div><i class="glyphicon glyphicon-floppy-save"></i>杞欢瀹夎鍖?/div>-->
+                                <!--<div class="tit">鍏朵粬</div>-->
+                                <!--<div><i class="glyphicon glyphicon-download-alt"></i>瀛楀箷涓嬭浇</div>-->
+                                <!--<div><i class="glyphicon glyphicon-flag"></i>鎶ュ憡闂</div>-->
+                                <!--</div>-->
+                                <!--</div>-->
+                        </div>
+                        <div class="video text-center" style="padding-right: 55px;">
+                            <div class="video-mine">
+                                <div class="cls-text"><a class="media" href=""></a></div>
+                                <div class="cls-video">
+                                    <div id="vdplay"></div>
+                                    <div class="vdControl">
+                                        <!--<div class="play" onclick="vdPlay()">鎾斁</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-nav">
+                            <div class="nav-stacked text-center">
+                                <li class="nav"><a href="javascript:;" class="glyphicon glyphicon-list-alt"><span>鐩綍</span></a></li>
+                                <li class="lab-note"><a href="javascript:;" class="glyphicon glyphicon-user"><span>绗旇</span></a></li>
+                                <li class="lab-ask"><a href="javascript:;" class="glyphicon glyphicon-cog"><span>闂瓟</span></a></li>
+                                <li class="lab-com"><a href="javascript:;" class="glyphicon glyphicon-duplicate"><span>璇勮</span></a></li>
+                            </div>
+                        </div>
+                        <div class="note">
+                            <div class="note-box">
+                                <div class="note-lab"><span class="active">鎴戠殑绗旇</span><span>绮鹃€夌瑪璁?/span></div>
+                                <div class="note-item-cont">
+                                    <div class="my-note">
+                                        <div class="textarea-box">
+                                            <textarea name="my-note" id=""></textarea>
+                                            <div class="info"><span class="time"><i class="i-play"></i>23`22` </span><span class="not-but">鎻愪氦</span></div>
+                                        </div>
+                                        <ul class="my-item-box">
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="time"><i class="i-play"></i>23`22` </span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="time"><i class="i-play"></i>23`22` </span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="time"><i class="i-play"></i>23`22` </span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="time"><i class="i-play"></i>23`22` </span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="time"><i class="i-play"></i>23`22` </span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="time"><i class="i-play"></i>23`22` </span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="time"><i class="i-play"></i>23`22` </span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="more">鏌ョ湅鏇村</a>
+                                    </div>
+                                    <div class="sel-note">
+                                        <ul class="my-item-box">
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="time"><i class="i-play"></i>23`22` </span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="time"><i class="i-play"></i>23`22` </span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="time"><i class="i-play"></i>23`22` </span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="time"><i class="i-play"></i>23`22` </span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="time"><i class="i-play"></i>23`22` </span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="time"><i class="i-play"></i>23`22` </span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="time"><i class="i-play"></i>23`22` </span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="more">鏌ョ湅鏇村</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ask">
+                            <div class="ask-box">
+                                <div class="note-lab"><span class="active">鎴戠殑闂瓟</span><span>绮鹃€夐棶绛?/span></div>
+                                <div class="note-item-cont">
+                                    <div class="my-note">
+                                        <div class="textarea-box">
+                                            <input type="text" class="ask-title" value="" placeholder="璇疯緭鍏ラ棶棰樻爣棰?>
+                                            <textarea name="my-note" id="" placeholder="璇疯緭鍏ラ棶棰樻弿杩?></textarea>
+                                            <div class="info"><span class="pic" onclick="screenshot()">鎴浘 </span><span class="not-but">淇濆瓨</span></div>
+                                        </div>
+                                        <ul class="my-item-box">
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-29</span>
+                                                    <div class="oper-box"><span><i class="i-edt"></i>缂栬緫</span><span><i class="i-del"></i>鍒犻櫎</span><span><i class="i-laud"></i>璧?/span></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="more">鏌ョ湅鏇村</a>
+                                    </div>
+                                    <div class="sel-note">
+                                        <ul class="my-item-box">
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div><span><img src="/static/img/asset-vid.png" alt=""></span><span class="name">鐜嬭€佸笀</span><span class="our-answer">鎴戞潵鍥炵瓟</span></div>
+                                                <div class="tit">杩欎釜鏄垜鎯抽棶鐨勯棶棰?/div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>4 灏忔椂鍓?/span>
+                                                    <div class="oper-box"><span>鍥炵瓟 2</span><span>娴忚 4</span></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="more">鏌ョ湅鏇村</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="com">
+                            <div class="com-box">
+                                <!--<div class="note-lab"><span class="active">鎴戠殑闂瓟</span><span>绮鹃€夐棶绛?/span></div>-->
+                                <div class="note-item-cont">
+                                    <div class="my-note">
+                                        <div class="evaluate">
+                                            <div class="eva-top">
+                                                <div class="tit">璇剧▼璇勫垎 </div>
+                                                <div class="star">
+                                                    <div class="score"><i>5</i></div>
+                                                </div><span class="star-score"> <i>5</i> 鍒?/span></div>
+                                            <div class="eva-cont">
+                                                <div class="tit">瀛﹀憳璇勮 </div>
+                                                <div class="text-box">
+                                                    <textarea class="form-control" rows="5" placeholder="鎵贰銆佸悙妲姐€佽〃鎵€侀紦鍔?.....鎯宠鍟ヨ鍟ワ紒"></textarea>
+                                                    <div class="text-right"><span>鍙戣〃璇勮</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--<div class="textarea-box">-->
+                                        <!--<input type="text" class="ask-title" value="" placeholder="璇疯緭鍏ラ棶棰樻爣棰?>-->
+                                        <!--<textarea name="my-note" id=""  placeholder="璇疯緭鍏ラ棶棰樻弿杩?></textarea>-->
+                                        <!--<div class="info"><span class="pic" onclick="screenshot()">鎴浘 </span><span class="not-but">淇濆瓨</span></div>-->
+                                        <!--</div>-->
+                                        <ul class="my-item-box">
+                                            <li>
+                                                <div>
+                                                    <span><img src="/static/img/asset-vid.png" alt=""></span>
+                                                    <span class="name">鐜嬭€佸笀</span>
+                                                    <div class="item-rit">
+                                                        <div class="star-show">
+                                                            <div class="score"><i>4</i></div>
+                                                        </div>
+                                                        <div class="showSt">璇勫垎 <span>5鏄?/span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-23</span>
+                                                    <div class="oper-box"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <span><img src="/static/img/asset-vid.png" alt=""></span>
+                                                    <span class="name">鐜嬭€佸笀</span>
+                                                    <div class="item-rit">
+                                                        <div class="star-show">
+                                                            <div class="score"><i>4</i></div>
+                                                        </div>
+                                                        <div class="showSt">璇勫垎 <span>5鏄?/span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-23</span>
+                                                    <div class="oper-box"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <span><img src="/static/img/asset-vid.png" alt=""></span>
+                                                    <span class="name">鐜嬭€佸笀</span>
+                                                    <div class="item-rit">
+                                                        <div class="star-show">
+                                                            <div class="score"><i>4</i></div>
+                                                        </div>
+                                                        <div class="showSt">璇勫垎 <span>5鏄?/span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-23</span>
+                                                    <div class="oper-box"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <span><img src="/static/img/asset-vid.png" alt=""></span>
+                                                    <span class="name">鐜嬭€佸笀</span>
+                                                    <div class="item-rit">
+                                                        <div class="star-show">
+                                                            <div class="score"><i>4</i></div>
+                                                        </div>
+                                                        <div class="showSt">璇勫垎 <span>5鏄?/span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-23</span>
+                                                    <div class="oper-box"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <span><img src="/static/img/asset-vid.png" alt=""></span>
+                                                    <span class="name">鐜嬭€佸笀</span>
+                                                    <div class="item-rit">
+                                                        <div class="star-show">
+                                                            <div class="score"><i>4</i></div>
+                                                        </div>
+                                                        <div class="showSt">璇勫垎 <span>5鏄?/span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-23</span>
+                                                    <div class="oper-box"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <span><img src="/static/img/asset-vid.png" alt=""></span>
+                                                    <span class="name">鐜嬭€佸笀</span>
+                                                    <div class="item-rit">
+                                                        <div class="star-show">
+                                                            <div class="score"><i>4</i></div>
+                                                        </div>
+                                                        <div class="showSt">璇勫垎 <span>5鏄?/span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="cont">
+                                                    璇剧▼鍐呭 娑堟伅鍥炲鎺ュ彛锛堝浘鏂?璇煶娑堟伅鐨勮嚜鍔ㄥ洖澶嶏級 绱犳潗绠＄悊鎺ュ彛锛堝浘鐗囦笂浼狅級 鑷畾涔夎彍鍗曟帴鍙ｏ紙鑿滃崟鐨勫垱寤猴紝鏌ヨ锛屽垹闄わ級
+                                                </div>
+                                                <div class="operation"><span>2017-2-23</span>
+                                                    <div class="oper-box"></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="more">鏌ョ湅鏇村</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navCont">
+                            <div class="course-weeklist">
+                                <div class="nav-stacked">
+                                    <div class="tit nav-justified text-center"><i class="pull-left glyphicon glyphicon-th-list"></i>绗竴鍛ㄨ蒋浠跺畨瑁?<i class="pull-right">1/4</i></div>
+                                    <li><i class="glyphicon glyphicon-check"></i><a href=javascript:vdPlay()>鍒嗙骇鏀跨瓥缁嗗垎</a></li>
+                                    <li><i class="glyphicon glyphicon-unchecked"></i>涓轰粈涔堝垎涓篈銆丅銆丆閮ㄥ垎</li>
+                                    <li><i class="glyphicon glyphicon-unchecked"></i>杞畨瑁呬粙缁?/li>
+                                    <li><i class="glyphicon glyphicon-unchecked"></i>Emacs瀹夎 </li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+               
+            </div>
+        </div>
+        <!-- 椤甸潰搴曢儴 -->
+        <!-- 椤甸潰 css js -->
+
+        <script type="text/javascript" src="/static/plugins/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="/static/plugins/js-pdf/jquery.media.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/plugins/ckplayer/ckplayer.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('.active-box span').click(function() {
+                    $(this).css({
+                        'color': '#00a4ff'
+                    })
+                    if ($(this).find('i').hasClass('i-laud')) {
+                        $(this).find('.i-laud').css('background-position', '-80px -19px')
+                    } else if ($(this).find('i').hasClass('i-coll')) {
+                        $(this).find('.i-coll').css('background-position', '1px -75px')
+                    }
+                })
+                $('.learing-box .item-list').mouseover(function(e) {
+                    $(this).css({
+                        'height': '140px'
+                    }).addClass('hov').siblings().css({
+                        'height': '50px'
+                    })
+                    $(this).siblings().removeClass('hov')
+                })
+                $('.learing-box .item-box').mouseout(function() {
+                    $(this).find('.item-list:first').css({
+                        'height': '140px'
+                    }).addClass('hov')
+                    $(this).find('.item-list:first').siblings().css({
+                        'height': '50px'
+                    }).removeClass('hov')
+                })
+            })
+
+
+            $(function() {
+                $('.learing-box .item-list').mouseover(function(e) {
+                    $(this).css({
+                        'height': '140px'
+                    }).addClass('hov').siblings().css({
+                        'height': '50px'
+                    })
+                    $(this).siblings().removeClass('hov')
+                })
+                $('.learing-box .item-box').mouseout(function() {
+                    $(this).find('.item-list:first').css({
+                        'height': '140px'
+                    }).addClass('hov')
+                    $(this).find('.item-list:first').siblings().css({
+                        'height': '50px'
+                    }).removeClass('hov')
+                })
+            })
+        </script>
+        <script type="text/javascript" src="/plugins/rainbow-custom.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                //浠ｇ爜鐐瑰嚮鏄剧ず
+                $(".item .item-left").click(function() {
+                    var pre = $(this).parent();
+                    if (!pre.find('pre').hasClass('code-pop')) {
+                        pre.find('pre').addClass('code-pop');
+                        pre.find('.mask,pre').css('display', 'block')
+                    } else {
+                        pre.find('pre').removeClass('code-pop');
+                        pre.find('.mask,pre').css('display', 'none')
+                    }
+                });
+                //浠ｇ爜鍒囨崲
+                $('.content-title p a').click(function() {
+                    $(this).addClass('all').siblings().removeClass('all');
+                })
+
+                $('.learing-box .item-list').mouseover(function(e) {
+                    $(this).css({
+                        'height': '140px'
+                    }).addClass('hov').siblings().css({
+                        'height': '50px'
+                    })
+                    $(this).siblings().removeClass('hov')
+                })
+                $('.learing-box .item-box').mouseout(function() {
+                    $(this).find('.item-list:first').css({
+                        'height': '140px'
+                    }).addClass('hov')
+                    $(this).find('.item-list:first').siblings().css({
+                        'height': '50px'
+                    }).removeClass('hov')
+                })
+            })
+
+
+            $(function() {
+                //璇勫垎
+                $('.star .score').map(function(n, i) {
+                    var x = Number($(this).find('i').text());
+                    var w = 109 * (1 - x / 5);
+                    $(this).css('width', w + 'px');
+                })
+                //璇勮鎵撳垎
+                $('.evaluate .star').mousemove(function(e) {
+                    var startX = $(this).offset().left;
+                    var movX = e.clientX - startX + 0.5;
+                    var w = 145 * (1 - movX / 145);
+                    $(this).find('.score').css('width', w + 'px');
+                    $('.star-score i').text((movX / 145 * 5).toFixed(1))
+                })
+                //鏄熺骇璇勫垎
+                $('.grade').map(function(n, i) {
+                    var pret = $(this).find('.percent-num i').text();
+                    var wt = $(this).find('.grade-percent').width();
+                    $(this).find('.grade-percent span').css('width', wt * pret / 100);
+                })
+
+
+
+            })
+
+
+            //鏂囨湰瀛︿範 PDF
+            $(function() {
+                $('.cls-text a.media').media({
+                    width: '100%',
+                    height: '100%'
+                });
+            });
+            	var videoObject = {
+				container: '#vdplay', //瀹瑰櫒鐨処D鎴朿lassName
+				variable: 'player',//鎾斁鍑芥暟鍚嶇О
+				poster:'/static/img/asset-video.png',//灏侀潰鍥剧墖
+				loaded: 'loadedHandler', //褰撴挱鏀惧櫒鍔犺浇鍚庢墽琛岀殑鍑芥暟
+
+				video: [//瑙嗛鍦板潃鍒楄〃褰㈠紡
+					['http://file.51xuecheng.cn/video/3/a/3a5a861d1c745d05166132c47b44f9e4/3a5a861d1c745d05166132c47b44f9e4.mp4', 'video/mp4', '涓枃鏍囨竻', 0]
+				]
+			};
+			var player = new ckplayer(videoObject);
+			function loadedHandler() {
+				
+				player.addListener('time', timeHandler); //鐩戝惉鎾斁鏃堕棿
+				player.addListener('duration', durationHandler); //鐩戝惉鎾斁鏃堕棿
+			}
+			function timeHandler(time) {
+				console.log('褰撳墠鎾斁鏃堕棿锛堢锛夛細' + time)
+			}
+			function durationHandler(duration) {
+				console.log('鎬绘椂闂达紙绉掞級锛? + duration)
+			}
+            function vdPlay() {
+                player.videoPlay()
+            }
+            // 鍦ㄧ嚎鍙戦€侊紒
+            $('.online-submit').click(function() {
+                var cont = $('.online-cont').val()
+                $('.chat-box').append('<li class="rt"><span><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517221250282&di=33dec77d7966a70bb1edef24cc93692d&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D593340121%2C2144442477%26fm%3D214%26gp%3D0.jpg" width="30" alt=""></span>' + cont + '</li>')
+                $('.online-cont').val('')
+            })
+           
+            // tab鍒囨崲
+            $('.subtitle-cont .tit span').click(function() {
+                swiTab($(this).attr('id'))
+            })
+            // tab鍒囨崲  鍙? 闂 浠ｇ爜鐐瑰嚮鍑芥暟
+            function swiTab(obj) {
+                console.log(obj)
+                if (obj) {
+                    $('#' + obj).addClass('active').siblings().removeClass('active');
+                    var clasNod = '.' + obj
+                } else {
+                    $(this).addClass('active').siblings().removeClass('active');
+                    var clasNod = '.' + $(this)[0].id
+                }
+                window.location = '#txt'
+                $('.subtitle-cont').find(clasNod).show().siblings().hide()
+            }
+
+            //鎴浘  //閫氳繃ajax鎻愪氦 褰撳墠鎾斁鏃堕棿缁欏悗鍙?鍚庡彴鐢ㄨ蒋浠舵埅鍥?杩斿洖鍥剧墖璺緞
+            function screenshot() {
+                var dataes = [times]
+                //    $.ajax({
+                //      url: "test.html",
+                //      data: dataes,
+                //      success: function(){
+                //        $(this).addClass("done");
+                //      }
+                //    });
+            }
+            // 鍏抽棴
+            $('.clone').click(function() {
+                $('.popup').hide()
+            })
+            // 鍥炲
+            $('.hf-onck').click(function() {
+                $('.hf-answer').show()
+            })
+            // 鍥炲鍙栨秷
+            $('.but-item .can').click(function() {
+                $('.hf-answer').hide()
+            })
+        </script>
+        <script type="text/javascript" src="/static/plugins/bootstrap/dist/js/bootstrap.js"></script>
+        <script>
+            $(function() {
+                //var vidHit = $('html').height() - 70;
+				var vidHit = $('html').height() ;
+                var vidCenHit = (vidHit - $('.video-play').height()) / 2;
+                var vdwt = $('.video').width();
+                var wt = 300;
+
+                $('.course-cont-top-video,.video').css('height', vidHit);
+                $('.video').css('height', vidHit - 50);
+                $('.note-cont').css('height', vidHit - $('.note-box .note').height() - 65);
+
+                $(window).resize(function() {
+                    $('.course-cont-top-video,.video').css('height', vidHit);
+                    $('.video').css('height', vidHit - 50);
+                    $('.nodte-cont').css('height', vidHit - $('.note-box .note').height() - 65);
+                });
+                //杩樺師鍒濆鐘舵€?鎺у埗鍣?                function setStart(obj) {
+                    if (obj === 'ck') { //宸﹀鑸?                        setnt()
+                        setak()
+                        setcm()
+                        setnav()
+                    } else if (obj === 'nt') { // 绗旇
+                        setak()
+                        setck()
+                        setcm()
+                        setnav()
+                    } else if (obj === 'ak') { // 闂瓟
+                        setck()
+                        setnt()
+                        setcm()
+                        setnav()
+                    } else if (obj === 'cm') { // 璇勮
+                        setck()
+                        setnt()
+                        setak()
+                        setnav()
+                    } else if (obj === 'nv') { // 鐩綍
+                        setck()
+                        setnt()
+                        setcm()
+                        setak()
+                    }
+                }
+
+                function setck() {
+                    if ($('.video-box .glyphicon-align-justify').hasClass('ck')) {
+                        $('.video-box .glyphicon-align-justify').removeClass('ck');
+                        $('.video-box').animate({
+                            width: '100%'
+                        }, 500)
+                        $('.course-nav').animate({
+                            'right': "0px"
+                        }, 0)
+                        $('.course-weeklist').animate({
+                            left: -wt
+                        }, 500)
+                    }
+                }
+
+                function setnt() {
+                    if ($('.course-nav .lab-note').hasClass('nt')) {
+                        $('.course-nav .lab-note').removeClass('nt');
+                        $('.note').animate({
+                            'width': "0"
+                        }, 500);
+                        $('.course-nav').animate({
+                            'right': "0px"
+                        }, 0)
+                        $('.video').animate({
+                            'width': '100%'
+                        }, 500);
+                    }
+                }
+                //
+                function setnav() {
+                    if ($('.course-nav .nav').hasClass('nv')) {
+                        $('.course-nav .nav').removeClass('nv');
+                        $('.navCont').animate({
+                            'width': "0"
+                        }, 500);
+                        $('.course-nav').animate({
+                            'right': "0px"
+                        }, 0)
+                        $('.video').animate({
+                            'width': '100%'
+                        }, 500);
+                    }
+                }
+                //
+                function setak() {
+                    if ($('.course-nav .lab-ask').hasClass('ak')) {
+                        $('.course-nav .lab-ask').removeClass('ak');
+                        $('.ask').animate({
+                            'width': "0"
+                        }, 500);
+                        $('.course-nav').animate({
+                            'right': "0px"
+                        }, 0)
+                        $('.video').animate({
+                            'width': '100%'
+                        }, 500);
+                    }
+                }
+                // 璁蹭箟
+                function setcm() {
+                    if ($('.course-nav .lab-com').hasClass('cm')) {
+                        $('.course-nav .lab-com').removeClass('cm');
+                        $('.com').animate({
+                            'width': "0"
+                        }, 500);
+                        $('.course-nav').animate({
+                            'right': "0px"
+                        }, 0)
+                        $('.video').animate({
+                            'width': '100%'
+                        }, 500);
+                    }
+                }
+                //
+                $('.note-box .problem').click(function() {
+                    alert('wenda')
+                    if (!$(this).hasClass('ck')) {
+                        $(this).addClass('ck');
+                        $(this).find('p').css('display', 'block')
+                        $('.note-cont').css('height', vidHit - $('.note-box .note').height() - 65);
+                    } else {
+                        $(this).removeClass('ck');
+                        $(this).find('p').css('display', 'none')
+                        $('.note-cont').css('height', vidHit - $('.note-box .note').height() - 65);
+                    }
+                });
+                //
+                var reht = $(".video-box .resou-box").height();
+                $(".video-box .pull-right").click(function() {
+                    if (!$(this).hasClass('ck')) {
+                        $(this).addClass('ck');
+                        $(".video-box .resources").animate({
+                            height: reht
+                        }, 500)
+                    } else {
+                        $(this).removeClass('ck');
+                        $(".video-box .resources").animate({
+                            height: 0
+                        }, 500)
+                    }
+                })
+                //绗旇鍒囨崲
+                $('.note-box .note-lab span, .ask-box .note-lab span').click(function() {
+                    $(this).addClass('active').siblings().removeClass('active')
+                    if ($(this).index() == 1) {
+                        $('.note-item-cont').animate({
+                            'left': -400
+                        }, 500)
+                    } else {
+                        $('.note-item-cont').animate({
+                            'left': 0
+                        }, 500)
+                    }
+                })
+                //绗旇閮ㄥ垎澶勭悊
+                var myNtHt = $('.my-note .textarea-box').height();
+                $('.my-note .my-item-box').css('height', $('.note-box').height() - myNtHt - 160 + "px");
+                $('.sel-note .my-item-box').css('height', $('.note-box').height() - 160 + "px");
+                $('.course-nav .lab-note').click(function() {
+                    window.location = '#'
+                    setStart('nt');
+                    if (!$(this).hasClass('nt')) {
+                        $(this).addClass('nt');
+                        $('.note').animate({
+                            'width': "400px"
+                        }, 500)
+                        $('.course-nav').animate({
+                            'right': "401px"
+                        }, 500)
+                        $('.video').animate({
+                            'width': vdwt - 380 + 'px'
+                        }, 500);
+                    } else {
+                        $(this).removeClass('nt');
+                        $('.note').animate({
+                            'width': "0"
+                        }, 500);
+                        $('.course-nav').animate({
+                            'right': "0px"
+                        }, 500)
+                        $('.video').animate({
+                            'width': '100%'
+                        }, 500);
+                    }
+                })
+                //鐩綍
+                $('.course-nav .nav').click(function() {
+                    window.location = '#'
+                    setStart('nv');
+                    if (!$(this).hasClass('nv')) {
+                        $(this).addClass('nv');
+                        $('.navCont').animate({
+                            'width': "300px"
+                        }, 500)
+                        $('.course-nav').animate({
+                            'right': "301px"
+                        }, 500)
+                        $('.video').animate({
+                            'width': vdwt - 280 + 'px'
+                        }, 500);
+                    } else {
+                        $(this).removeClass('nv');
+                        $('.navCont').animate({
+                            'width': "0"
+                        }, 500);
+                        $('.course-nav').animate({
+                            'right': "0px"
+                        }, 500)
+                        $('.video').animate({
+                            'width': '100%'
+                        }, 500);
+                    }
+                })
+                // 闂瓟
+                $('.course-nav .lab-ask').click(function() {
+                    window.location = '#'
+                    setStart('ak');
+                    if (!$(this).hasClass('ak')) {
+                        $(this).addClass('ak');
+                        $('.ask').animate({
+                            'width': "400px"
+                        }, 500)
+                        $('.course-nav').animate({
+                            'right': "401px"
+                        }, 500)
+                        $('.video').animate({
+                            'width': vdwt - 380 + 'px'
+                        }, 500);
+                    } else {
+                        $(this).removeClass('ak');
+                        $('.ask').animate({
+                            'width': "0"
+                        }, 500);
+                        $('.course-nav').animate({
+                            'right': "0px"
+                        }, 500)
+                        $('.video').animate({
+                            'width': '100%'
+                        }, 500);
+                    }
+                })
+                // 璇勮
+                $('.course-nav .lab-com').click(function() {
+                    window.location = '#'
+                    setStart('cm');
+                    if (!$(this).hasClass('cm')) {
+                        $(this).addClass('cm');
+                        $('.com').animate({
+                            'width': "400px"
+                        }, 500)
+                        $('.course-nav').animate({
+                            'right': "401px"
+                        }, 500)
+                        $('.video').animate({
+                            'width': vdwt - 380 + 'px'
+                        }, 500);
+                    } else {
+                        $(this).removeClass('cm');
+                        $('.com').animate({
+                            'width': "0"
+                        }, 500);
+                        $('.course-nav').animate({
+                            'right': "0px"
+                        }, 500)
+                        $('.video').animate({
+                            'width': '100%'
+                        }, 500);
+                    }
+                })
+                //video鎾斁鍣?                $('.video-mine .cls-text').click(function() {
+
+                })
+
+            })
+
+
+
+			var learningVm= new Vue({   
+        el: "#learingApp", 
+
+        data: {
+            courseId:'',
+            teachplans:[]
+        },
+        methods: {
+            getTeachplans() {
+               
+            }
+           
+        },
+       created() {
+        // var id = GetQueryString("id");
+        // if(!id){
+        //     this.$message.error('鍙傛暟閿欒');
+        //     return ;
+        // }
+        // requestGetCourseInfo(id).then(res=>{
+        //       this.teachplans = res.teachplans;
+        //       console.log(res)
+        //   });
+        },
+        mounted(){
+
+        }
+    })
+        </script>
+</body>

@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 涓婅堪3涓猰eta鏍囩*蹇呴』*鏀惧湪鏈€鍓嶉潰锛屼换浣曞叾浠栧唴瀹归兘*蹇呴』*璺熼殢鍏跺悗锛?-->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/img/asset-favicon.ico">
+    <title>娉ㄥ唽</title>
+    <link rel="stylesheet" href="/static/plugins/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="/static/plugins/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/page-learing-student-register.css" />
+</head>
+
+<body>
+<!-- 椤甸潰澶撮儴 -->
+<!--#include virtual="/include/header.html"-->
+    <!-- 椤甸潰 -->
+    <div class="register">
+
+        <div id="registerarea" class="register-body">
+            <img src="/static/img/page-register_img.jpg" alt="" class="register-ico" width="460">
+            <form class="form-horizontal required-validate" id="regStudentForm">
+                <ul class="r-position student">
+                    <li>
+                        <div class="page-header">
+                            <h3>娆㈣繋娉ㄥ唽瀛︽垚鍦ㄧ嚎</h3>
+							宸茬粡鏈夎处鍙凤紝鍘?a href="/sign.html">鐧诲綍</a>
+                        </div>
+						
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">鎵嬫満鍙风爜</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="cellphone" placeholder="璇疯緭鍏ユ墜鏈哄彿鐮? v-model="formdata.cellphone">
+                                <span class="verif-span"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">楠岃瘉鐮?/label>
+                            <div class="col-sm-9 verif">
+                                <input type="text" class="form-control" name="checkcodek" placeholder="璇疯緭鍏ラ獙璇佺爜" v-model="formdata.checkcode">
+                                <button class="btn btn-default send" type="button" @click="sendcheckcode()">鍙戦€侀獙璇佺爜</button>
+                                <input type="hidden" class="form-control" name="checkcodekey"  v-model="formdata.checkcodekey">
+                                <span class="verif-span"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">璐﹀彿</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="username" placeholder="璇疯緭鍏ヨ处鍙? v-model="formdata.username">
+                                <span class="verif-span"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">鏄电О</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="nickname" placeholder="璇疯緭鍏ユ樀绉?  v-model="formdata.nickname">
+                                <span class="verif-span"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">閭</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="email" placeholder="璇疯緭鍏ラ偖绠? v-model="formdata.email">
+                                <span class="verif-span"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">瀵嗙爜</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" name="password" placeholder="璇疯緭鍏ュ瘑鐮? v-model="formdata.password">
+                                <span class="verif-span"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">纭瀵嗙爜</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" name="confirmpwd" placeholder="纭瀵嗙爜" v-model="formdata.confirmpwd">
+                                <span class="verif-span"></span>
+                            </div>
+                    </li>
+                    <li class="mag-left">
+                        <div class="checkbox">
+                            <label>
+                        <input type="checkbox" checked>鍚屾剰鍗忚骞舵敞鍐?                        <a href="javascript:;">銆婂鎴愬湪绾挎敞鍐屽崗璁€?/a>
+                    </label>
+                        </div>
+                    </li>
+                    <li class="mag-left">
+                        <button name="register" type="button" class="btn btn-primary" @click="registerSubmit">瀹屾垚娉ㄥ唽</button>
+                    </li>
+                </ul>
+            </form>
+            </div>
+           
+            <div class="register-footer">
+                <br/><br/><br/><br/><br/>
+                <!--搴曢儴鐗堟潈-->
+                <!--#include virtual="/include/footer.html"-->
+            </div>
+        </div>
+        <!-- 椤甸潰 css js -->
+        <script type="text/javascript" src="../plugins/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="../plugins/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../js/page-learing-student-register.js"></script>
+
+        <script>
+            /*鎵嬫満楠岃瘉鐮?/
+            const getCheckCodeByCellphone = (cellphone) => {
+                return  requestPostForm('/api/checkcode/phone?param1='+cellphone,{});
+            }
+
+            /*娉ㄥ唽*/
+              const registerfun = (params) => {
+                return  requestPost('/api/auth/register',params);
+            }
+            var countdowntime=0;
+                      var registerareaVm= new Vue({  
+                             el: "#registerarea", 
+                             data: {
+                               formdata:{
+                                   cellphone:'',
+                                   username:'',
+                                   email:'',
+                                   nickname:'',
+                                   password:'',
+                                   confirmpwd:'',
+                                   checkcodekey:'',
+                                   checkcode:''
+                               }
+                 
+                             },
+                             methods: {
+                              sendcheckcode(){
+                                  if(countdowntime>0){
+                                      return;
+                                  }
+                                  if(!this.formdata.cellphone){
+                                    this.$message.error('璇疯緭鍏ユ墜鏈哄彿')
+                                    return ;
+                                  }
+                                  //鎵嬫満鎵惧洖
+                                  getCheckCodeByCellphone(this.formdata.cellphone).then(res=>{
+                                          //鍊掕鏃?                                          this.countdown()
+                                          if(res&&res.key){
+                                              this.formdata.checkcodekey=res.key
+                                              this.$message.success('鍚戞墜鏈哄彂閫侀獙璇佺爜鎴愬姛锛岃鏌ユ敹')
+                                          }
+                                         
+                                      }).catch(error=>{
+                                          if(error&&error.response.data.errMessage){
+                                              this.$message.error(error.response.data.errMessage)
+                                          }else{
+                                              this.$message.error('鍑洪敊浜?)
+                                          }
+                                         
+                                      })
+                              },
+                              countdown(){
+                                    countdowntime = 5;
+                                  var time = setInterval(function(){
+                                          $('.send').removeClass('btn-default').addClass('btn-success');
+                                          countdowntime--;
+                                          $('.send').text( countdowntime + '绉掑悗閲嶅彂');
+                                          if(countdowntime == 0){
+                                              $('.send').removeClass('btn-success').addClass('btn-default')
+                                              $('.send').text('鍙戦€侀獙璇佺爜');
+                                              clearInterval(time);
+                                          }
+                                      },1000)
+                                  
+                                 
+                              },
+                              registerSubmit(){
+                                registerfun(this.formdata).then(res=>{
+                                    this.$message.success('娉ㄥ唽鎴愬姛璇风櫥褰?)
+                                  }).catch(error=>{
+          
+                                  })
+                              }
+                 
+                             },
+                             created() {
+                              
+                             },
+                             mounted(){
+                                
+                             }
+                           })
+                 </script>
+</body>

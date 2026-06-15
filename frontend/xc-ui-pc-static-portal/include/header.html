@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>椤靛ご</title>
+    <link rel="stylesheet" href="/static/plugins/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="/static/plugins/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/css/page-learing-article.css" />
+    <link rel="stylesheet" href="/static/css/page-learing-index.css" />
+    <link rel="stylesheet" href="/static/css/page-header.css" />
+    <link rel="stylesheet" href="/static/css/el/index.css" />
+    <link rel="stylesheet" href="/static/css/main.css" />
+
+    <script src="/static/js/vue/vue.min.js"></script>
+    <script src="/static/js/jwt-decode/jwt-decode.min.js"></script>
+    <script src="/static/js/base64.min.js"></script>
+    <script src="/static/js/axios/axios.min.js"></script>
+    <script src="/static/js/querystring/index.js"></script>
+    <script src="/static/js/util.js"></script>
+    <script src="/static/js/public.js"></script>
+    <script src="/static/js/login.js"></script>
+    <script src="/static/css/el/index.js"></script>
+</head>
+<body >
+<div id="app">
+<!--澶撮儴瀵艰埅-->
+<header>
+    <div class="learingHeader">
+        <nav class="navbar">
+            <div class="">
+                <div class="logo"><img src="/static/img/asset-logoIco.png" width="100%" alt=""></div>
+                <div class="nav-list">
+                    <ul class="nav navbar-nav">
+                        <li ><a href="http://www.51xuecheng.cn">棣栭〉</a></li>
+                        <li><a href="/course/search.html">璇剧▼</a></li>
+                        <li><a href="#">鑱屼笟瑙勫垝</a></li>
+                        <li></li>
+                    </ul>
+                </div>
+
+                <div class="sign-in">
+                    <!-- 鏈櫥褰?-->
+                    <!-- <a href="#">鐧诲綍 </a> <span> | </span> <a href="#"> 娉ㄥ唽</a>-->
+                    <!-- 鐧诲綍 -->
+                    <!--<a href="#" class="personal"><span class="personalIco"></span>娑堟伅</a>-->
+                    <span v-if="logined == true">娆㈣繋{{this.user.name}}</span>
+                    <a href="javascript:;" @click="logout" v-if="logined == true">閫€鍑?/a>
+					 <a href="javascript:;" @click="showlogin" v-if="logined == false">鐧婚檰&nbsp;|&nbsp;娉ㄥ唽</a>
+                    <a href="http://ucenter.51xuecheng.cn/" class="personal" target="_blank">鎴戠殑瀛︿範</a>
+                    <a href="http://teacher.51xuecheng.cn/" class="personal" target="_blank">鏁欏鏈烘瀯</a>
+                    <!--<a href="#" class="myInfo"><img src="img/asset-myImg.jpg" alt="">涓汉涓績</a>-->
+                </div>
+                <!--<div class="starch">
+                    <div><input type="text" class="input-search" placeholder="杈撳叆鏌ヨ鍏抽敭璇?></div>
+                    <div class="searchword"><a href="">鎼滅储</a> </div>
+                </div>-->
+                <div class="starch">
+                    <div><input type="text" id="keywords-text" class="input-search" v-model="keywords" @keyup.enter="search"  placeholder="杈撳叆鏌ヨ鍏抽敭璇?></div>
+                    <div class="searchword"><a @click="search">鎼滅储</a> </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+</header>
+</div>
+<script type="text/x-template" id="login">
+<div>login....</div>
+</script>
+<script>
+
+  var headVm= new Vue({   //鍒涘缓涓€涓猇ue鐨勫疄渚?
+        el: "#app", //鎸傝浇鐐规槸id="app"鐨勫湴鏂?
+
+        data: {
+            keywords: '',
+            loginFormVisible: false,
+            activeName: 'login',
+            editLoading: false,
+
+            formLabelWidth: '120px',
+            user:{
+                userid:'',
+                username: '',
+                userpic: '',
+                name:''
+            },
+            logined:false
+        },
+        methods: {
+            search() {
+                if (this.keywords === '') {
+                    window.location = "/course/search.html"
+                } else {
+                    let keywords = encodeURIComponent(this.keywords)
+                    window.location = "/course/search.html?keywords="+keywords
+                }
+            },
+           logout: function () {
+                this.$confirm('纭閫€鍑哄悧?', '鎻愮ず', {
+                }).then(() => {
+                    logout()
+                    
+                }).catch(() => {
+
+                });
+            },
+            refresh_user:function(){
+                let activeUser= getActiveUser();
+                if(activeUser){
+                    this.logined = true
+                    this.user = activeUser;
+                    console.log(activeUser)
+                }
+                
+
+            },
+//             refresh_user:function(){
+//                 //浠巗essionStorage涓彇鍑哄綋鍓嶇敤鎴?
+//                 let activeUser= getActiveUser();
+//                 //鍙栧嚭cookie涓殑浠ょ墝
+//                 let uid = getCookie("uid")
+// //                alert(uid)
+//                 //console.log(activeUser)
+//                 if(activeUser && uid && uid == activeUser.uid){
+//                     this.logined = true
+//                     this.user = activeUser;
+//                 }else{
+//                     if(!uid){
+//                         return ;
+//                     }
+//                     //璇锋眰鏌ヨjwt
+//                     getjwt().then((res) => {
+//                         if(res.success){
+//                             let jwt = res.jwt;
+//                             let activeUser = getUserInfoFromJwt(jwt)
+//                             if(activeUser){
+//                                 this.logined = true
+//                                 this.user = activeUser;
+//                                 setUserSession("activeUser",JSON.stringify(activeUser))
+//                             }
+//                         }
+//                     })
+//                 }
+//             },
+            resetForm:function(formName){
+                this.$refs[formName].resetFields();
+            },
+            showlogin: function(){
+                window.location = "/sign.html?returnUrl="+ Base64.encode(window.location)
+            }
+        },
+       created() {
+
+        },
+        mounted(){
+            //鍒锋柊褰撳墠鐢ㄦ埛
+            this.refresh_user()
+        }
+    })
+</script>
+</body>
+</html>

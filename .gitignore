@@ -27,6 +27,12 @@ target/
 /.nb-gradle/
 build/
 logs/
+node_modules/
+dist/
+.DS_Store
+._*
+~$*
+*.tmp
 
 ### VS Code ###
 .vscode/

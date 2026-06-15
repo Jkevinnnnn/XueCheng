@@ -87,6 +87,15 @@ public class CourseBaseInfoController {
         return courseBaseInfoDto;
     }
 
-
+    @ApiOperation("delete course")
+    @DeleteMapping("/course/{courseId}")
+    public void deleteCourseBase(@PathVariable Long courseId){
+        SecurityUtil.XcUser user = SecurityUtil.getUser();
+        Long companyId = null;
+        if(StringUtils.isNotEmpty(user.getCompanyId())){
+            companyId = Long.parseLong(user.getCompanyId());
+        }
+        courseBaseInfoService.deleteCourseBase(companyId, courseId);
+    }
 
 }

@@ -1,0 +1,31 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "properties": {
+      "id": { "type": "keyword" },
+      "companyId": { "type": "keyword" },
+      "companyName": { "type": "text", "analyzer": "standard" },
+      "name": { "type": "text", "analyzer": "standard" },
+      "users": { "type": "text", "analyzer": "standard" },
+      "tags": { "type": "text", "analyzer": "standard" },
+      "mt": { "type": "keyword" },
+      "mtName": { "type": "keyword" },
+      "st": { "type": "keyword" },
+      "stName": { "type": "keyword" },
+      "grade": { "type": "keyword" },
+      "teachmode": { "type": "keyword" },
+      "pic": { "type": "keyword", "index": false },
+      "description": { "type": "text", "analyzer": "standard" },
+      "createDate": { "type": "date", "format": "yyyy-MM-dd HH:mm:ss||strict_date_optional_time||epoch_millis" },
+      "status": { "type": "keyword" },
+      "remark": { "type": "text", "analyzer": "standard" },
+      "charge": { "type": "keyword" },
+      "price": { "type": "float" },
+      "originalPrice": { "type": "float" },
+      "validDays": { "type": "integer" }
+    }
+  }
+}

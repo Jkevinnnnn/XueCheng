@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 涓婅堪3涓猰eta鏍囩*蹇呴』*鏀惧湪鏈€鍓嶉潰锛屼换浣曞叾浠栧唴瀹归兘*蹇呴』*璺熼殢鍏跺悗锛?-->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/img/asset-favicon.ico">
+    <title>鐧诲綍</title>
+    <link rel="stylesheet" href="/static/plugins/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="/static/plugins/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/css/page-learing-sign.css" />
+    <script src="/static/js/wxLogin.js"></script>
+</head>
+
+<body>
+<!-- 椤甸潰澶撮儴 -->
+<!--#include virtual="/include/header.html"-->
+    <!-- 椤甸潰 -->
+    <div id="loginarea" class="register">
+        <!--<img src="../../assets/img/logoico.png" alt="logo" width="200">-->
+
+        <div class="register-body container text-center">
+            <div class="signTit cl"><span class="sign activ" style="width:100px">鎵爜鐧诲綍</span><span ><a href="/register.html">娉ㄥ唽</a></span></div>
+            <div class="signItem show" id="login_container">
+                
+            </div>
+           
+        </div>
+<!--搴曢儴鐗堟潈-->
+<!--#include virtual="/include/footer.html"-->
+    </div>
+    <!-- 椤甸潰 css js -->
+    <script type="text/javascript" src="/plugins/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/plugins/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/static/js/page-learing-sign.js"></script>
+<script>
+
+  //璇风敤寰俊鐢熸垚浜岀淮鐮?  function generateWxQrcode(token) {
+    var wxObj = new WxLogin({
+        self_redirect:true,
+        id:"login_container", 
+        appid: "wx17655f8047b85150", 
+        scope: "snsapi_login", 
+        redirect_uri: "http://tjxt-user-t.itheima.net/xuecheng/auth/wxLogin",
+        state: token,
+        style: "",
+        href: ""
+      });
+    }
+
+     var loginVm= new Vue({  
+            el: "#loginarea", 
+            data: {
+              usernamejson:{
+                 username:'',
+                  password:'',
+                  checkcode:'',
+                  checkcodekey:'',
+                  authType:'password'
+              },
+              formdata:{
+                  username:'',
+                  grant_type:'password',
+                  client_secret:'XcWebApp',
+                  client_id:'XcWebApp'
+              },
+              autologin:false,
+              checkcode_img:''
+
+            },
+            methods: {
+            //   login(){
+            //       //杞琷son涓?            //       let usernameJson = JSON.stringify(this.usernamejson)
+            //       console.log(usernameJson)
+            //       this.formdata.username = usernameJson;
+            //       let params = querystringify(this.formdata);
+            //        loginSubmit(params).then(res=>{
+            //             console.log(res)
+            //             if(res&& res.access_token){
+
+            //                 if(this.autologin){
+            //                     setCookie('jwt',res.access_token,30)
+            //                 }else{
+            //                     setCookie('jwt',res.access_token,0)
+            //                 }
+                            
+            //                 this.$message.success('鐧诲綍鎴愬姛')
+            //                 setInterval("window.location='/'",2000)
+            //             }
+
+            //       }).catch(error=>{
+            //         if(error&&error.response&&error.response.data&&error.response.data.error_description){
+            //             this.$message.error(error.response.data.error_description)
+            //         }
+            //         this.getCheckCode();
+            //       })
+    
+            //   },
+              getCheckCode(){
+                getCheckCodeSubmit().then(res=>{
+                    //console.log(res)
+                      if(res&&res.key){
+                        generateWxQrcode(res.key);
+                      }
+              })
+             }
+          },
+            created() {
+                this.getCheckCode()
+            },
+            mounted(){
+               
+            }
+          })
+</script>
+</body>
